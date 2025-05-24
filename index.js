@@ -12,6 +12,11 @@ const io = socketIO(server, {
   },
 });
 
+// UptimeRobot ping route
+app.get("/", (req, res) => {
+  res.send("Server is up");
+});
+
 let userCount = 0;
 
 io.on("connection", (socket) => {
